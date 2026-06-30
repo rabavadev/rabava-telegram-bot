@@ -1,0 +1,15 @@
+{
+  "name": "kick-rabava-bot",
+  "version": "1.0.0",
+  "description": "RABAVA STUDIO — Telegram order bot (Cloudflare Worker)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^3.78.0"
+  }
+}

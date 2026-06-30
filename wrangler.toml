@@ -1,0 +1,14 @@
+name = "kick-rabava-bot"
+main = "src/worker.js"
+compatibility_date = "2024-09-23"
+
+# Per-user order sessions (carts + checkout state).
+# Create the namespace once, then paste its id below — see README step 4.
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "PASTE_YOUR_KV_NAMESPACE_ID"
+
+# Secrets are NOT stored here. Set them with:
+#   wrangler secret put BOT_TOKEN
+#   wrangler secret put OWNER_CHAT_ID
+#   wrangler secret put WEBHOOK_SECRET
