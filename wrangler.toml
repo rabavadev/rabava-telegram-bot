@@ -1,14 +1,17 @@
-name = "kick-rabava-bot"
+name = "rabava-portfolio-telegram-bot"
 main = "src/worker.js"
-compatibility_date = "2024-09-23"
+compatibility_date = "2024-11-01"
 
 # Per-user order sessions (carts + checkout state).
-# Create the namespace once, then paste its id below — see README step 4.
 [[kv_namespaces]]
 binding = "SESSIONS"
-id = "PASTE_YOUR_KV_NAMESPACE_ID"
+id = "a93400b42cd5448291f58e943228d461"
 
-# Secrets are NOT stored here. Set them with:
-#   wrangler secret put BOT_TOKEN
-#   wrangler secret put OWNER_CHAT_ID
-#   wrangler secret put WEBHOOK_SECRET
+# Secrets are NOT stored here — they live in the Cloudflare dashboard
+# (Settings → Variables and Secrets) and persist across deploys:
+#   BOT_TOKEN       — from @BotFather
+#   OWNER_CHAT_ID   — your numeric Telegram chat id (orders go here)
+#   WEBHOOK_SECRET  — random string; also verifies the /__register route
+#
+# To (re)point Telegram at this worker after a deploy, open once in a browser:
+#   https://<worker-url>/__register?key=<WEBHOOK_SECRET>
